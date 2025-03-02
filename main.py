@@ -1,37 +1,44 @@
-# main.py
-
-from panda3d.core import Point3, Vec3
-from direct.showbase.ShowBase import ShowBase
-from direct.task import Task
-from math import sin, cos, radians
-
-class MyApp(ShowBase):
-    def __init__(self):
-        ShowBase.__init__(self)
-
-        # Set up the environment
-        self.set_background_color(0.5, 0.5, 0.5)  # Light gray background
-
-        # Create a ground plane
-        self.ground = self.loader.loadModel("models/plane")  # Use a built-in plane model
-        self.ground.reparentTo(self.render)
-        self.ground.setScale(10, 10, 1)
-        self.ground.setPos(0, 0, -1)
-
-        # Create a cube to represent the boy
-        self.boy = self.loader.loadModel("models/box")  # Use a built-in box model
-        self.boy.reparentTo(self.render)
-        self.boy.setScale(0.5, 0.5, 1)
-        self.boy.setPos(0, 0, 0)
-
-        # Add a task to animate the boy typing
-        self.taskMgr.add(self.animate_typing, "animate_typing")
-
-    def animate_typing(self, task):
-        # Simple animation logic (moving the boy up and down)
-        self.boy.setZ(0.5 * sin(task.time * 2))  # Move up and down
-        return Task.cont
-
-if __name__ == "__main__":
-    app = MyApp()
-    app.run()
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Yash's Domain</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 3em;
+            text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+            margin-top: 20px;
+        }
+        .container {
+            position: relative;
+            display: inline-block;
+            margin-top: 50px;
+        }
+        img {
+            border: 2px solid #00ff00;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .container:hover .overlay {
+            opacity
