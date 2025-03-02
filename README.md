@@ -25,8 +25,6 @@
         }
         img {
             border: 2px solid #00ff00;
-            border-radius: 10px;
-            box-shadow: 0 0 20px #00ff00;
         }
         .overlay {
             position: absolute;
@@ -43,25 +41,4 @@
             transition: opacity 0.5s;
         }
         .container:hover .overlay {
-            opacity: 1;
-        }
-        .overlay-text {
-            color: #00ff00;
-            font-size: 1.5em;
-            text-shadow: 0 0 10px #00ff00;
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <img alt="Coder GIF" height="350" width="550" src="https://granroyalleigarape.com.br/wp-content/uploads/2021/05/programmer.gif" />
-    <div class="overlay">
-        <div class="overlay-text">Welcome to the Code Realm</div>
-    </div>
-</div>
-
-<h1>Hey, It's Yash</h1>
-
-</body>
-</html>
+            opacity
